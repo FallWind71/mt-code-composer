@@ -1,0 +1,5 @@
+#!/bin/sh
+# mt —— 零安装启动器：不碰系统 Python，只把包目录加进 PYTHONPATH
+SELF=$(readlink -f "$0" 2>/dev/null || echo "$0")
+DIR=$(cd "$(dirname "$SELF")/.." && pwd)
+PYTHONPATH="$DIR${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m mt "$@"

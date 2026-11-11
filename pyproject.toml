@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mt"
+version = "1.0.0"
+description = "代码作曲工具链：MIDI 写入/读取 → fluidsynth 渲染 → 分轨混音 → 客观质检"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.scripts]
+mt = "mt.cli:main"
+
+[tool.setuptools]
+packages = ["mt"]
